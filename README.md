@@ -1,1 +1,1 @@
-Apache Superset
+Superset
