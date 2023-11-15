@@ -139,6 +139,16 @@ superset init
 pip install gunicorn -i https://pypi.douban.com/simple/
 ```
 
+如果要编译前端代码，首先要按照nodejs, 然后从github找到对应的版本下载
+
+```
+git clone git@github.com:apache/superset.git
+
+cd superset-frontend
+npm ci
+npm run build
+```
+
 启动 superset
 
 ```sh
@@ -147,6 +157,7 @@ gunicorn --workers 5 --timeout 120 --bind bigdata101:8787 "superset.app:create_a
 
 访问 `http://bigdata101:8787`，登录 superset
 
+如果编译的前端代码，就可以从9000端口访问 `http://ip:9000`
 
 停掉 gunicorn 进程
 
