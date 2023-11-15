@@ -85,6 +85,20 @@ pip install apache-superset==1.3.2 -i https://pypi.douban.com/simple/
 pip install apache-superset==1.3.2 --trusted-host https://repo.huaweicloud.com -i https://repo.huaweicloud.com/repository/pypi/simple
 ```
 
+如果使用mysql作为元数据库，需要修改config.py文件
+
+```
+# SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(DATA_DIR, "superset.db")
+SQLALCHEMY_DATABASE_URI = "mysql://root:123456@localhost/superset?charset=utf8"
+SQLALCHEMY_EXAMPLES_URI = "mysql://root:123456@localhost/superset?charset=utf8"
+```
+执行如下命令
+
+```
+pip install pyodps
+pip install mysqlclient
+```
+
 初始化 supetset 数据库
 
 ```sh
